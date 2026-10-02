@@ -1,0 +1,8 @@
+{
+  "name": "Leak Detection Pro - North Mountain Village",
+  "description": "Water and gas leak detection and repair referral service for North Mountain Village, Phoenix, AZ.",
+  "permissions": [],
+  "capabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
