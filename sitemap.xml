@@ -102,4 +102,60 @@
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
+  <url>
+    <loc>https://www.northmountainvillageleakdetectionaz.com/blog/</loc>
+    <lastmod>2026-10-03</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.northmountainvillageleakdetectionaz.com/blog/how-to-detect-hidden-water-leak/</loc>
+    <lastmod>2026-10-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://www.northmountainvillageleakdetectionaz.com/assets/images/acoustic_listening_leak_detection_1790956263068.jpg</image:loc>
+      <image:title>Water Leak Signs &amp; Detection Guide</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.northmountainvillageleakdetectionaz.com/blog/how-to-detect-slab-leak/</loc>
+    <lastmod>2026-10-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://www.northmountainvillageleakdetectionaz.com/assets/images/thermal_camera_leak_inspection_1790956263068.jpg</image:loc>
+      <image:title>Slab Leak Detection &amp; Signs</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.northmountainvillageleakdetectionaz.com/blog/gas-leak-detection-emergency-guide/</loc>
+    <lastmod>2026-10-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://www.northmountainvillageleakdetectionaz.com/assets/images/combustible_gas_detector_1790956263068.jpg</image:loc>
+      <image:title>Gas Leak Signs &amp; Emergency Guide</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.northmountainvillageleakdetectionaz.com/blog/modern-leak-detect-methods/</loc>
+    <lastmod>2026-10-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://www.northmountainvillageleakdetectionaz.com/assets/images/hero_leak_detection_1790956263068.jpg</image:loc>
+      <image:title>Modern Leak Detect Technologies</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.northmountainvillageleakdetectionaz.com/blog/pipe-leak-repair-options-costs/</loc>
+    <lastmod>2026-10-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://www.northmountainvillageleakdetectionaz.com/assets/images/hero_leak_detection_1790956263068.jpg</image:loc>
+      <image:title>Plumbing Leak Repair Options &amp; Costs</image:title>
+    </image:image>
+  </url>
 </urlset>
