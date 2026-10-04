@@ -95,7 +95,7 @@
   <a class="skip" href="#main">Skip to content</a>
   <header>
     <a class="brand" href="/">
-      <img src="/assets/logo.svg" width="44" height="44" alt="Leak Detection Pro logo">
+      <img src="/assets/logo.svg" width="44" height="44" alt="Leak Detection Pro logo" decoding="async">
       Leak Detection Pro
     </a>
     <nav aria-label="Main">
@@ -135,14 +135,10 @@
       </p>
 
       <figure class="media-figure">
-        <img 
-          src="/assets/images/hero_leak_detection_1790956263068.jpg" 
-          alt="Leak detection specialist using high-frequency listening equipment and thermal cameras in residential home" 
-          class="media-img" 
-          width="820" 
-          height="461" 
-          loading="eager" 
-          referrerPolicy="no-referrer">
+        <picture>
+        <source srcset="/assets/images/hero_leak_detection_1790956263068.webp" type="image/webp">
+        <img src="/assets/images/hero_leak_detection_1790956263068.jpg" alt="Leak detection specialist using high-frequency listening equipment and thermal cameras in residential home" class="media-img" width="820" height="461" loading="lazy" referrerPolicy="no-referrer" decoding="async">
+      </picture>
         <figcaption>Multi-sensor diagnostic rigs allow specialists to leak detect concealed pipes through concrete and walls.</figcaption>
       </figure>
 

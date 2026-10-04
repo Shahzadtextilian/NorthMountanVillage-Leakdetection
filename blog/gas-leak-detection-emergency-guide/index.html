@@ -95,7 +95,7 @@
   <a class="skip" href="#main">Skip to content</a>
   <header>
     <a class="brand" href="/">
-      <img src="/assets/logo.svg" width="44" height="44" alt="Leak Detection Pro logo">
+      <img src="/assets/logo.svg" width="44" height="44" alt="Leak Detection Pro logo" decoding="async">
       Leak Detection Pro
     </a>
     <nav aria-label="Main">
@@ -139,14 +139,10 @@
       </p>
 
       <figure class="media-figure">
-        <img 
-          src="/assets/images/combustible_gas_detector_1790956263068.jpg" 
-          alt="Technician testing gas pipe valve unions with electronic combustible gas sniffer probe" 
-          class="media-img" 
-          width="820" 
-          height="461" 
-          loading="eager" 
-          referrerPolicy="no-referrer">
+        <picture>
+        <source srcset="/assets/images/combustible_gas_detector_1790956263068.webp" type="image/webp">
+        <img src="/assets/images/combustible_gas_detector_1790956263068.jpg" alt="Technician testing gas pipe valve unions with electronic combustible gas sniffer probe" class="media-img" width="820" height="461" loading="lazy" referrerPolicy="no-referrer" decoding="async">
+      </picture>
         <figcaption>Handheld combustible gas detectors measure parts-per-million (PPM) concentrations to isolate microscopic leaks.</figcaption>
       </figure>
 

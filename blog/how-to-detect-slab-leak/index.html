@@ -95,7 +95,7 @@
   <a class="skip" href="#main">Skip to content</a>
   <header>
     <a class="brand" href="/">
-      <img src="/assets/logo.svg" width="44" height="44" alt="Leak Detection Pro logo">
+      <img src="/assets/logo.svg" width="44" height="44" alt="Leak Detection Pro logo" decoding="async">
       Leak Detection Pro
     </a>
     <nav aria-label="Main">
@@ -135,14 +135,10 @@
       </p>
 
       <figure class="media-figure">
-        <img 
-          src="/assets/images/thermal_camera_leak_inspection_1790956263068.jpg" 
-          alt="Thermal imaging inspection displaying hot water slab leak signature beneath tile flooring" 
-          class="media-img" 
-          width="820" 
-          height="461" 
-          loading="eager" 
-          referrerPolicy="no-referrer">
+        <picture>
+        <source srcset="/assets/images/thermal_camera_leak_inspection_1790956263068.webp" type="image/webp">
+        <img src="/assets/images/thermal_camera_leak_inspection_1790956263068.jpg" alt="Thermal imaging inspection displaying hot water slab leak signature beneath tile flooring" class="media-img" width="820" height="461" loading="lazy" referrerPolicy="no-referrer" decoding="async">
+      </picture>
         <figcaption>FLIR thermal imaging maps heated water pooling underneath residential tile foundations.</figcaption>
       </figure>
 
