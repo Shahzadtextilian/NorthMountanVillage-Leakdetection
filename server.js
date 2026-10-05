@@ -28,6 +28,20 @@ app.get('/404.html', (req, res) => {
   res.status(404).sendFile(path.join(__dirname, '404.html'));
 });
 
+// 301 Redirects from legacy individual area routes to unified /areas/ page
+const legacyAreaRoutes = [
+  '/sunnyslope', '/sunnyslope/',
+  '/moon-valley', '/moon-valley/',
+  '/paradise-valley', '/paradise-valley/',
+  '/deer-valley', '/deer-valley/',
+  '/glendale', '/glendale/',
+  '/alhambra', '/alhambra/',
+  '/desert-ridge', '/desert-ridge/'
+];
+app.get(legacyAreaRoutes, (req, res) => {
+  res.redirect(301, '/areas/');
+});
+
 // Serve static assets and html files
 app.use(express.static(__dirname, {
   extensions: ['html'],
