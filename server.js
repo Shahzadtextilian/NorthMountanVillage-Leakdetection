@@ -23,6 +23,11 @@ app.get('/llm.txt', (req, res) => {
   res.sendFile(path.join(__dirname, 'llm.txt'));
 });
 
+// Explicit 404 status for 404 page
+app.get('/404.html', (req, res) => {
+  res.status(404).sendFile(path.join(__dirname, '404.html'));
+});
+
 // Serve static assets and html files
 app.use(express.static(__dirname, {
   extensions: ['html'],
