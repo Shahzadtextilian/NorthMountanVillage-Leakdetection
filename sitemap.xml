@@ -80,9 +80,13 @@
   </url>
   <url>
     <loc>https://www.northmountainvillageleakdetectionaz.com/contact/</loc>
-    <lastmod>2026-10-02</lastmod>
+    <lastmod>2026-10-07</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://www.northmountainvillageleakdetectionaz.com/assets/images/hero_leak_detection_1790956263068.jpg</image:loc>
+      <image:title>Leak Detection Dispatch Center Phoenix</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://www.northmountainvillageleakdetectionaz.com/privacy-policy/</loc>

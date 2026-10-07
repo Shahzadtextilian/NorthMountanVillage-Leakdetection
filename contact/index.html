@@ -57,6 +57,7 @@
         "@id": "https://www.northmountainvillageleakdetectionaz.com/contact/#page",
         "url": "https://www.northmountainvillageleakdetectionaz.com/contact/",
         "name": "Contact Leak Detection Pro | Phoenix, AZ Leak Detection Referral",
+        "image": "https://www.northmountainvillageleakdetectionaz.com/assets/images/hero_leak_detection_1790956263068.jpg",
         "isPartOf": { "@id": "https://www.northmountainvillageleakdetectionaz.com/#site" }
       },
       {
@@ -99,6 +100,15 @@
     
     <p><a class="btn" href="tel:+16028363562">Call Now: (602) 836-3562</a></p>
 
+    <!-- Visual Media Showcase with Lazy Loading & WebP format -->
+    <figure class="media-figure">
+      <picture>
+        <source srcset="/assets/images/hero_leak_detection_1790956263068.webp" type="image/webp">
+        <img src="/assets/images/hero_leak_detection_1790956263068.jpg" alt="Leak detection specialist dispatch center serving North Mountain Village, Phoenix" class="media-img" width="820" height="461" loading="lazy" decoding="async">
+      </picture>
+      <figcaption>Independent leak detection dispatch hub serving North Mountain Village and Greater Phoenix.</figcaption>
+    </figure>
+
     <section>
       <h2>Service details &amp; location</h2>
       <address style="font-style: normal; line-height: 1.8; background: #fff; padding: 16px; border: 1px solid var(--line); border-radius: 8px;">
@@ -112,22 +122,26 @@
 
       <div class="map-wrapper">
         <h3>Our Service Location in Phoenix, AZ</h3>
-        <div class="map-facade" id="map-contact">
-          <div class="map-facade-icon" aria-hidden="true">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
-          </div>
-          <div class="map-facade-title">Leak Detection Pro HQ</div>
-          <div class="map-facade-address">2810 W Sahuaro Dr, Phoenix, AZ 85029 · North Mountain Village</div>
-          <div class="map-facade-actions">
-            <a class="map-btn-directions" href="https://maps.google.com/?q=2810+W+Sahuaro+Dr,+Phoenix,+AZ+85029" target="_blank" rel="noopener noreferrer">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-              Get Directions
-            </a>
-            <button type="button" class="map-btn-load" onclick="loadInteractiveMap('map-contact')">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="5 3 19 12 5 21 5 3"/></svg>
-              Load Interactive Map
-            </button>
-          </div>
+        <p style="font-size: 0.95rem; color: var(--text-muted); margin-bottom: 0.8rem;">
+          Dispatching independent specialists from 2810 W Sahuaro Dr, Phoenix, AZ 85029:
+        </p>
+        <div class="map-container">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2168.259567651518!2d-112.12345799100474!3d33.584565142173!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x872b6c15368c8683%3A0xa42a4714d96a5298!2s2810%20W%20Sahuaro%20Dr%2C%20Phoenix%2C%20AZ%2085029%2C%20USA!5e1!3m2!1sen!2sua!4v1790956994805!5m2!1sen!2sua"
+            width="100%"
+            height="350"
+            style="border:0;"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            title="Google Maps location of Leak Detection Pro dispatch hub in North Mountain Village, Phoenix AZ">
+          </iframe>
+        </div>
+        <div style="margin-top: 0.8rem;">
+          <a class="btn" style="padding: 10px 18px; font-size: 0.95rem;" href="https://maps.google.com/?q=2810+W+Sahuaro+Dr,+Phoenix,+AZ+85029" target="_blank" rel="noopener noreferrer">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="vertical-align: -2px; margin-right: 4px;" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            Open in Google Maps / Get Directions
+          </a>
         </div>
       </div>
     </section>
