@@ -3,7 +3,7 @@
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://www.northmountainvillageleakdetectionaz.com/</loc>
-    <lastmod>2026-10-02</lastmod>
+    <lastmod>2026-10-12</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
     <image:image>
@@ -68,25 +68,31 @@
   </url>
   <url>
     <loc>https://www.northmountainvillageleakdetectionaz.com/areas/</loc>
-    <lastmod>2026-10-05</lastmod>
+    <lastmod>2026-10-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.northmountainvillageleakdetectionaz.com/about/</loc>
-    <lastmod>2026-10-02</lastmod>
+    <lastmod>2026-10-12</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.northmountainvillageleakdetectionaz.com/contact/</loc>
-    <lastmod>2026-10-07</lastmod>
+    <lastmod>2026-10-12</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.8</priority>
     <image:image>
       <image:loc>https://www.northmountainvillageleakdetectionaz.com/assets/images/hero_leak_detection_1790956263068.jpg</image:loc>
       <image:title>Leak Detection Dispatch Center Phoenix</image:title>
     </image:image>
+  </url>
+  <url>
+    <loc>https://www.northmountainvillageleakdetectionaz.com/disclaimer/</loc>
+    <lastmod>2026-10-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://www.northmountainvillageleakdetectionaz.com/privacy-policy/</loc>
@@ -102,7 +108,7 @@
   </url>
   <url>
     <loc>https://www.northmountainvillageleakdetectionaz.com/blog/how-to-detect-hidden-water-leak/</loc>
-    <lastmod>2026-10-03</lastmod>
+    <lastmod>2026-10-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>

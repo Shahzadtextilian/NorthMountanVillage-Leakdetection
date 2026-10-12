@@ -77,6 +77,17 @@ app.get(legacyAreaRoutes, (req, res) => {
   res.redirect(301, 'https://www.northmountainvillageleakdetectionaz.com/areas/');
 });
 
+// 301 Redirects for legacy truncated URLs discovered by search engines
+app.get(['/gas-leak', '/gas-leak/'], (req, res) => {
+  res.redirect(301, 'https://www.northmountainvillageleakdetectionaz.com/gas-leak-detection/');
+});
+
+app.get(['/water-leak', '/water-leak/'], (req, res) => {
+  res.redirect(301, 'https://www.northmountainvillageleakdetectionaz.com/water-leak-detection/');
+});
+
+// Note: /disclaimer/ is served directly by express.static, which automatically handles /disclaimer -> /disclaimer/
+
 // Serve static assets and html files
 app.use(express.static(__dirname, {
   extensions: ['html'],
