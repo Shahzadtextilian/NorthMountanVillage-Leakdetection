@@ -86,6 +86,10 @@ app.get(['/water-leak', '/water-leak/'], (req, res) => {
   res.redirect(301, 'https://www.northmountainvillageleakdetectionaz.com/water-leak-detection/');
 });
 
+app.get(['/blog/leak-detection-north-mountain-village-phoenix-az', '/blog/leak-detection-north-mountain-village-phoenix-az/'], (req, res) => {
+  res.redirect(301, 'https://www.northmountainvillageleakdetectionaz.com/leak-detection-north-mountain-village-phoenix-az/');
+});
+
 // Note: /disclaimer/ is served directly by express.static, which automatically handles /disclaimer -> /disclaimer/
 
 // Serve static assets and html files
