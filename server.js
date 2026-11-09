@@ -37,22 +37,93 @@ app.get('/favicon.svg', (req, res) => {
   res.sendFile(path.join(__dirname, 'favicon.svg'));
 });
 
-// 2. Canonical Domain & HTTPS Enforcement Middleware
+// 2. Canonical Path Normalizer & Single-Hop Redirection Map
+const LEGACY_AREA_ROUTES = new Set([
+  '/sunnyslope', '/sunnyslope/',
+  '/moon-valley', '/moon-valley/',
+  '/paradise-valley', '/paradise-valley/',
+  '/deer-valley', '/deer-valley/',
+  '/glendale', '/glendale/',
+  '/alhambra', '/alhambra/',
+  '/desert-ridge', '/desert-ridge/'
+]);
+
+const DIRECTORY_ROUTES = new Set([
+  '/about',
+  '/areas',
+  '/blog',
+  '/contact',
+  '/disclaimer',
+  '/gas-leak-detection',
+  '/pipe-leak-repair',
+  '/privacy-policy',
+  '/sitemap',
+  '/slab-leak-detection',
+  '/water-leak-detection',
+  '/leak-detection-north-mountain-village-phoenix-az',
+  '/blog/complete-leak-detection-guide',
+  '/blog/underground-water-line-leak-detection',
+  '/blog/how-to-detect-hidden-water-leak',
+  '/blog/how-to-detect-slab-leak',
+  '/blog/gas-leak-detection-emergency-guide',
+  '/blog/modern-leak-detect-methods',
+  '/blog/pipe-leak-repair-options-costs'
+]);
+
+function resolveCanonicalPath(pathname) {
+  // Legacy area routes -> /areas/
+  if (LEGACY_AREA_ROUTES.has(pathname)) {
+    return '/areas/';
+  }
+  // Legacy aliases
+  if (pathname === '/gas-leak' || pathname === '/gas-leak/') {
+    return '/gas-leak-detection/';
+  }
+  if (pathname === '/water-leak' || pathname === '/water-leak/') {
+    return '/water-leak-detection/';
+  }
+  if (pathname === '/blog/leak-detection-north-mountain-village-phoenix-az' || pathname === '/blog/leak-detection-north-mountain-village-phoenix-az/') {
+    return '/leak-detection-north-mountain-village-phoenix-az/';
+  }
+
+  // If path is a directory without trailing slash, enforce canonical trailing slash
+  if (DIRECTORY_ROUTES.has(pathname)) {
+    return pathname + '/';
+  }
+
+  return pathname;
+}
+
+// Canonical Domain, HTTPS, and Clean URL Enforcement Middleware
 app.use((req, res, next) => {
-  const host = (req.headers['x-forwarded-host'] || req.headers.host || '').split(':')[0];
-  const proto = req.headers['x-forwarded-proto'] || req.protocol;
+  const host = (req.headers['x-forwarded-host'] || req.headers.host || '').split(':')[0].toLowerCase();
+  const proto = (req.headers['x-forwarded-proto'] || req.protocol).toLowerCase();
 
   // Add HSTS and security headers
   res.setHeader('Strict-Transport-Security', 'max-age=31536000; includeSubDomains; preload');
   res.setHeader('X-Content-Type-Options', 'nosniff');
 
-  // Single-hop canonical 301 redirection if requested via non-www apex or unencrypted http on custom domain
-  if (host === 'northmountainvillageleakdetectionaz.com') {
-    return res.redirect(301, `https://www.northmountainvillageleakdetectionaz.com${req.originalUrl}`);
+  const [reqPath, queryString] = req.originalUrl.split('?');
+  const canonicalPath = resolveCanonicalPath(reqPath);
+  const querySuffix = queryString ? `?${queryString}` : '';
+
+  const isApex = host === 'northmountainvillageleakdetectionaz.com';
+  const isWww = host === 'www.northmountainvillageleakdetectionaz.com';
+  const isHttp = proto === 'http';
+
+  // 1. Direct single-hop 301 redirection for apex domain or non-secure HTTP
+  if (isApex || (isWww && isHttp)) {
+    return res.redirect(301, `https://www.northmountainvillageleakdetectionaz.com${canonicalPath}${querySuffix}`);
   }
 
-  if (host === 'www.northmountainvillageleakdetectionaz.com' && proto === 'http') {
-    return res.redirect(301, `https://www.northmountainvillageleakdetectionaz.com${req.originalUrl}`);
+  // 2. Direct single-hop 301 redirection on canonical domain if path is non-canonical (e.g. missing trailing slash or legacy alias)
+  if (isWww && reqPath !== canonicalPath) {
+    return res.redirect(301, `https://www.northmountainvillageleakdetectionaz.com${canonicalPath}${querySuffix}`);
+  }
+
+  // 3. For local dev / preview environments, enforce path canonicalization
+  if (!isApex && !isWww && reqPath !== canonicalPath) {
+    return res.redirect(301, `${canonicalPath}${querySuffix}`);
   }
 
   next();
@@ -62,35 +133,6 @@ app.use((req, res, next) => {
 app.get('/404.html', (req, res) => {
   res.status(404).sendFile(path.join(__dirname, '404.html'));
 });
-
-// 301 Redirects from legacy individual area routes to unified canonical /areas/ page
-const legacyAreaRoutes = [
-  '/sunnyslope', '/sunnyslope/',
-  '/moon-valley', '/moon-valley/',
-  '/paradise-valley', '/paradise-valley/',
-  '/deer-valley', '/deer-valley/',
-  '/glendale', '/glendale/',
-  '/alhambra', '/alhambra/',
-  '/desert-ridge', '/desert-ridge/'
-];
-app.get(legacyAreaRoutes, (req, res) => {
-  res.redirect(301, 'https://www.northmountainvillageleakdetectionaz.com/areas/');
-});
-
-// 301 Redirects for legacy truncated URLs discovered by search engines
-app.get(['/gas-leak', '/gas-leak/'], (req, res) => {
-  res.redirect(301, 'https://www.northmountainvillageleakdetectionaz.com/gas-leak-detection/');
-});
-
-app.get(['/water-leak', '/water-leak/'], (req, res) => {
-  res.redirect(301, 'https://www.northmountainvillageleakdetectionaz.com/water-leak-detection/');
-});
-
-app.get(['/blog/leak-detection-north-mountain-village-phoenix-az', '/blog/leak-detection-north-mountain-village-phoenix-az/'], (req, res) => {
-  res.redirect(301, 'https://www.northmountainvillageleakdetectionaz.com/leak-detection-north-mountain-village-phoenix-az/');
-});
-
-// Note: /disclaimer/ is served directly by express.static, which automatically handles /disclaimer -> /disclaimer/
 
 // Serve static assets and html files
 app.use(express.static(__dirname, {
