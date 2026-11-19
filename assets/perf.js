@@ -18,7 +18,7 @@ window.loadInteractiveMap = function(containerId) {
   iframe.style.height = '100%';
   iframe.allowFullscreen = true;
   iframe.loading = 'lazy';
-  iframe.title = 'Google Maps location of Leak Detection Pro at 2810 W Sahuaro Dr, Phoenix, AZ 85029';
+  iframe.title = 'Google Maps location of North Mountain Village Leak Detection at 2810 W Sahuaro Dr, Phoenix, AZ 85029';
   iframe.referrerPolicy = 'no-referrer-when-downgrade';
 
   container.innerHTML = '';
