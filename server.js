@@ -61,6 +61,7 @@ const DIRECTORY_ROUTES = new Set([
   '/slab-leak-detection',
   '/water-leak-detection',
   '/leak-detection-north-mountain-village-phoenix-az',
+  '/slab-leak-warning-signs-phoenix',
   '/blog/complete-leak-detection-guide',
   '/blog/underground-water-line-leak-detection',
   '/blog/how-to-detect-hidden-water-leak',
@@ -84,6 +85,9 @@ function resolveCanonicalPath(pathname) {
   }
   if (pathname === '/blog/leak-detection-north-mountain-village-phoenix-az' || pathname === '/blog/leak-detection-north-mountain-village-phoenix-az/') {
     return '/leak-detection-north-mountain-village-phoenix-az/';
+  }
+  if (pathname === '/blog/slab-leak-warning-signs-phoenix' || pathname === '/blog/slab-leak-warning-signs-phoenix/') {
+    return '/slab-leak-warning-signs-phoenix/';
   }
 
   // If path is a directory without trailing slash, enforce canonical trailing slash
